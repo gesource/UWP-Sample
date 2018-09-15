@@ -6,5 +6,10 @@ UWP(C#)のサンプルです。
 
 ダイアログで選択されたファイルやフォルダーとウィンドウにドロップされたファイルやフォルダーのパスを表示するUWPアプリケーションです。
 
-![](FileOpenSample/FileOpenSample.png)
+![ファイルやフォルダーを開くサンプルのスクリーンショット](FileOpenSample/FileOpenSample.png)
 
+## [ListViewのグループ化のサンプル](ListViewGrouping/)
+
+ListViewでデータをグループ化して表示するUWPアプリケーションです。
+
+![ListViewのグループ化のサンプルのスクリーンショット](ListViewGrouping/ListViewGrouping.png)
