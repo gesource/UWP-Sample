@@ -2,6 +2,12 @@
 
 UWP(C#)のサンプルです。
 
+## [DataTemplateSelectorでDataTemplateを切り替える](DataTemplateSelectorSample)
+
+![DataTemplateSelectorでDataTemplateを切り替えるサンプル](DataTemplateSelectorSample/DataTemplateSelectorSample.png)
+
+ListViewのDataTemplateをデータの内容によって切り替える方法です。
+
 ## [ファイルやフォルダーを開くサンプル](FileOpenSample/)
 
 ダイアログで選択されたファイルやフォルダーとウィンドウにドロップされたファイルやフォルダーのパスを表示するUWPアプリケーションです。
