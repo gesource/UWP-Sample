@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="ProgressRingSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ProgressRingSample"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <local:BooleanToVisibilityConverter x:Key="booleanToVisibility" />
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            Text="ProgressBarを表示する" />
+        <ToggleSwitch
+            x:Name="bar"
+            Grid.Row="0"
+            Grid.Column="1" />
+        <ProgressBar
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Stretch"
+            IsIndeterminate="True"
+            Visibility="{x:Bind bar.IsOn, Converter={StaticResource booleanToVisibility}, Mode=OneWay}" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            Text="ProgressRingを表示する" />
+        <ToggleSwitch
+            x:Name="ring"
+            Grid.Row="2"
+            Grid.Column="1" />
+        <ProgressRing
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            IsActive="{x:Bind ring.IsOn, Mode=OneWay}" />
+    </Grid>
+</Page>

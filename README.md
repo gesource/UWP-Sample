@@ -34,3 +34,7 @@ ListViewでデータをグループ化して表示するUWPアプリケーショ
 ハンバーガーメニューのサンプルアプリです。
 
 ![ハンバーガーメニューのサンプル](HamburgerMenu/HamburgerMenu.gif)
+
+## [UWPのProgressRingとProgressBarのサンプルです。](ProgressRingSample/)
+
+![](ProgressRingSample/ProgressRing.gif)
