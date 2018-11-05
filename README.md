@@ -38,3 +38,11 @@ ListViewでデータをグループ化して表示するUWPアプリケーショ
 ## [UWPのProgressRingとProgressBarのサンプルです。](ProgressRingSample/)
 
 ![](ProgressRingSample/ProgressRing.gif)
+
+## [ テーマ(ライトテーマorダークテーマ)を取得・設定するサンプル](ThemeSample)
+
+## テーマ(ライトテーマorダークテーマ)を取得・設定するサンプルアプリケーション
+
+アプリの実行中にStackPanelのテーマを変更するサンプルアプリケーションです。
+
+![](ThemeSample/ThemeSample.gif)
