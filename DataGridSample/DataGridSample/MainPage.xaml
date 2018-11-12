@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="DataGridSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DataGridSample"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <Button Click="GoSubPage01_Click" Content="SubPage01(ItemsSourceをソースコードで設定)" />
+        <Button Click="GoSubPage02_Click" Content="SubPage02(ItemsSourceをXamlで設定)" />
+        <Button Click="GoSubPage03_Click" Content="SubPage03(列をカスタマイズ)" />
+        <Button Click="GoSubPage04_Click" Content="SubPage04(グリッドの表示をカスタマイズ)" />
+    </StackPanel>
+</Page>
