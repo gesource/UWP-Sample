@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="ColorPickerSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ColorPickerSample"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <local:NullableBooleanToBooleanConverter x:Key="NullableBooleanToBooleanConverter" />
+            <local:ColorSpectrumShapeConverter x:Key="ColorSpectrumShapeConverter" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <Page.TopAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="Theme" />
+                    <ComboBox x:Name="ThemePicker">
+                        <ComboBoxItem Content="System" />
+                        <ComboBoxItem Content="Light" />
+                        <ComboBoxItem Content="Dark" />
+                    </ComboBox>
+                </StackPanel>
+            </CommandBar.Content>
+        </CommandBar>
+    </Page.TopAppBar>
+    <Grid x:Name="Grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <ColorPicker
+            x:Name="ColorPicker"
+            Grid.Column="0"
+            ColorSpectrumShape="{x:Bind ColorSpectrumShapeCombBox.SelectedValue, Converter={StaticResource ColorSpectrumShapeConverter}, Mode=OneWay}"
+            IsAlphaEnabled="{x:Bind IsAlphaEnabledCheckBox.IsChecked, Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"
+            IsAlphaSliderVisible="{x:Bind IsAlphaSliderVisibleCheckBox.IsChecked, Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"
+            IsAlphaTextInputVisible="{x:Bind IsAlphaTextInputVisibleCheckBox.IsChecked, Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"
+            IsColorChannelTextInputVisible="{x:Bind IsColorChannelTextInputVisibleCheckBox.IsChecked, Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"
+            IsColorPreviewVisible="{x:Bind IsColorPreviewVisibleCheckBox.IsChecked, Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"
+            IsColorSliderVisible="{x:Bind IsColorSliderVisibleCheckBox.IsChecked, Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"
+            IsColorSpectrumVisible="{x:Bind IsColorSpectrumVisibleCheckBox.IsChecked, Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"
+            IsHexInputVisible="{x:Bind IsHexInputVisibleCheckBox.IsChecked, Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}" />
+        <StackPanel Grid.Column="1">
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="ColorPicker Properties" />
+            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="カラースペクトル" />
+            <CheckBox x:Name="IsColorSpectrumVisibleCheckBox" Content="IsColorSpectrumVisible" />
+            <ComboBox
+                x:Name="ColorSpectrumShapeCombBox"
+                DisplayMemberPath="Value"
+                ItemsSource="{x:Bind ColorSpectrumShapeItems}"
+                SelectedValuePath="Key" />
+            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="色のプレビュー" />
+            <CheckBox x:Name="IsColorPreviewVisibleCheckBox" Content="IsColorPreviewVisible" />
+            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="色の値" />
+            <CheckBox x:Name="IsColorSliderVisibleCheckBox" Content="IsColorSliderVisible" />
+            <CheckBox x:Name="IsColorChannelTextInputVisibleCheckBox" Content="IsColorChannelTextInputVisible" />
+            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="不透明度の値" />
+            <CheckBox x:Name="IsAlphaEnabledCheckBox" Content="IsAlphaEnabled" />
+            <CheckBox x:Name="IsAlphaSliderVisibleCheckBox" Content="IsAlphaSliderVisible" />
+            <CheckBox x:Name="IsAlphaTextInputVisibleCheckBox" Content="IsAlphaTextInputVisible" />
+            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="16進値" />
+            <CheckBox x:Name="IsHexInputVisibleCheckBox" Content="IsHexInputVisible" />
+            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="選択された色" />
+            <Rectangle Width="300" Height="200">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{x:Bind ColorPicker.Color, Mode=OneWay}" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </StackPanel>
+    </Grid>
+</Page>

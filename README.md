@@ -2,7 +2,16 @@
 
 UWP(C#)のサンプルです。
 
-## [DataTemplateSelectorでDataTemplateを切り替える](DataTemplateSelectorSample)
+## [ColorPickerのサンプル](ColorPickerSample/)
+
+ColorPickerのサンプルアプリケーションです。
+
+ColorPickerのプロパティを変更したときの、表示状態を確認できます。  
+テーマ（ライトテーマ・ダークテーマ）を切り替えることができ、テーマごとのColorPickerの表示も確認できます。
+
+[![](ColorPickerSample/ColorPickerSample-mini.png)](ColorPickerSample/ColorPickerSample.png)
+
+## [DataTemplateSelectorでDataTemplateを切り替える](DataTemplateSelectorSample/)
 
 ![DataTemplateSelectorでDataTemplateを切り替えるサンプル](DataTemplateSelectorSample/DataTemplateSelectorSample.png)
 
@@ -39,7 +48,7 @@ ListViewでデータをグループ化して表示するUWPアプリケーショ
 
 ![](ProgressRingSample/ProgressRing.gif)
 
-## [テーマ(ライトテーマorダークテーマ)を取得・設定するサンプル](ThemeSample)
+## [テーマ(ライトテーマorダークテーマ)を取得・設定するサンプル](ThemeSample/)
 
 アプリの実行中にStackPanelのテーマを変更するサンプルアプリケーションです。
 
